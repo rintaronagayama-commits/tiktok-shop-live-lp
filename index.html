@@ -58,6 +58,8 @@
     .lead { margin: 15px auto 0; color: var(--muted); font-size: 15px; }
     .text-cyan { color: var(--cyan); text-shadow: 0 0 18px rgba(0,242,234,.3); }
     .text-pink { color: #ff5b8f; text-shadow: 0 0 18px rgba(255,0,80,.22); }
+    .sp-only { display: none; }
+    .pc-only { display: inline; }
     .note { margin: 10px 0 0; color: var(--dim); font-size: 11px; text-align: center; }
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity .65s ease, transform .65s ease; }
     .reveal.visible { opacity: 1; transform: none; }
@@ -132,6 +134,7 @@
     .content-visual-frame { margin-top: 28px; }
     .concerns-visual-frame { width: min(100%, 800px); }
     .why-visual-frame { width: min(100%, 760px); }
+    .why-visual-frame + .why-visual-frame { margin-top: 18px; }
     .reasons-visual-frame { width: min(100%, 940px); }
 
     /* 1. Hero */
@@ -300,9 +303,13 @@
       .hero-copy { order: 2; margin-top: 18px; }
       .hero-action { order: 3; width: 100%; }
       .hero .cta-btn { width: 100%; margin-top: 18px; }
+      .cta-btn { padding-right: 12px; padding-left: 12px; font-size: 14px; }
       .hero .cta-meta { margin-top: 8px; }
-      .image-frame { padding: 5px; border-radius: 13px; }
-      .production-image { border-radius: 16px; }
+      .sp-only { display: inline; }
+      .pc-only { display: none; }
+      /* Full-bleed production visuals on mobile. Text and information cards keep their readable gutters. */
+      .image-frame { width: calc(100% + 28px); max-width: none; margin-right: -14px; margin-left: -14px; padding: 0; border-right: 0; border-left: 0; border-radius: 0; }
+      .production-image { border-radius: 0; }
       .image-placeholder { min-height: 190px; padding: 20px 12px; }
       .section-head { margin-bottom: 25px; }
       h2 { font-size: 28px; }
@@ -339,6 +346,7 @@
       .faq-a p { padding: 0 14px 14px 35px; font-size: 11px; }
       .final { padding: 73px 0 78px; }
       .final-box { padding: 28px 17px; }
+      .final .cta-btn { font-size: 13px; }
       .final p { font-size: 13px; }
       footer { padding-bottom: 22px; }
     }
@@ -363,7 +371,7 @@
         </div>
         <div class="hero-copy reveal">
           <span class="hero-badge">LINE登録者限定・無料配布</span>
-          <h1>TikTok Shop LIVEの始め方を、<br><span class="text-cyan">LINEで無料配布中</span></h1>
+          <h1>TikTok Shop LIVEの始め方を<br><span class="text-cyan">LINEで無料配布中</span></h1>
           <p>未経験でも迷わない。まずは1日で全体像をつかむ。</p>
         </div>
         <div class="hero-action reveal">
@@ -385,21 +393,25 @@
           <img class="production-image" src="assets/images/concerns-visual.png" alt="TikTok Shop LIVEを始める前によくある4つの悩み">
           <div class="image-placeholder"><strong>悩み訴求ビジュアル</strong><code>assets/images/concerns-visual.png</code><span>このパスに制作済み画像を配置してください</span></div>
         </div>
-        <p class="bridge reveal">その不安を解消するために、<br><span class="text-cyan">TikTok Shop LIVEの始め方</span>がわかる<br>無料ロードマップを用意しました。</p>
+        <p class="bridge reveal">その不安を解消するために<br><span class="text-cyan">TikTok Shop LIVEの始め方</span>がわかる<br>無料ロードマップを用意しました。</p>
       </div>
     </section>
 
-    <!-- 3. WHY NOW visual: replace only assets/images/why-now-visual.png. -->
+    <!-- 3. WHY NOW visuals: replace only assets/images/why-now-growth-phase.png and assets/images/why-now-three-reasons.png. -->
     <section class="section section-black" id="why-now">
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">WHY NOW</p>
-          <h2>TikTok Shop LIVEは、<br><span class="text-pink">今のうちに始める人</span>が有利です</h2>
+          <h2>TikTok Shop LIVEは<br><span class="text-pink">今のうちに始める人</span><br class="sp-only">が有利です</h2>
           <p class="lead">TikTok Shopは、2025年6月30日に日本で提供が始まった新しい領域です。市場が広がる前に、LIVE販売の型を先に身につけることが差になります。</p>
         </div>
         <div class="image-frame content-visual-frame why-visual-frame reveal">
-          <img class="production-image" src="assets/images/why-now-visual.png" alt="TikTok Shop LIVEを今のうちに始める人が有利な3つの理由">
-          <div class="image-placeholder"><strong>WHY NOWビジュアル</strong><code>assets/images/why-now-visual.png</code><span>このパスに制作済み画像を配置してください</span></div>
+          <img class="production-image" src="assets/images/why-now-growth-phase.png" alt="TikTok Shop LIVE市場の成長フェーズと今始める重要性">
+          <div class="image-placeholder"><strong>成長フェーズ図</strong><code>assets/images/why-now-growth-phase.png</code><span>このパスに制作済み画像を配置してください</span></div>
+        </div>
+        <div class="image-frame why-visual-frame reveal">
+          <img class="production-image" src="assets/images/why-now-three-reasons.png" alt="TikTok Shop LIVEを今のうちに始める3つの理由">
+          <div class="image-placeholder"><strong>今始める3つの理由</strong><code>assets/images/why-now-three-reasons.png</code><span>このパスに制作済み画像を配置してください</span></div>
         </div>
       </div>
     </section>
@@ -410,7 +422,7 @@
         <div class="section-head reveal">
           <p class="eyebrow">BEGINNER FRIENDLY</p>
           <h2>TikTok Shop LIVEが<br><span class="text-cyan">初心者でも始めやすい理由</span></h2>
-          <p class="lead">必要なのは、特別なセンスよりも「流れ」と「型」です。</p>
+          <p class="lead">必要なのは、特別なセンスよりも<br class="sp-only">「流れ」と「型」です。</p>
         </div>
         <div class="image-frame content-visual-frame reasons-visual-frame reveal">
           <img class="production-image" src="assets/images/beginner-reasons-visual.png" alt="TikTok Shop LIVEが初心者でも始めやすい3つの理由">
@@ -441,7 +453,7 @@
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">COMPARISON</p>
-          <h2>動画投稿より、<br><span class="text-pink">ライブコマース</span>が売りやすい理由</h2>
+          <h2>動画投稿より<br><span class="text-pink">ライブコマース</span><br class="sp-only">が売りやすい理由</h2>
           <p class="lead">リアルタイムで伝えて、その場で購入へ。視聴者と会話しながら説明できるため、購入までの心理的な距離を縮めやすいのが特徴です。</p>
         </div>
         <p class="note reveal">これから参入するなら、動画投稿だけでなく、ライブ販売の型を早く身につけることが重要です。</p>
@@ -481,7 +493,7 @@
         <div class="section-head reveal"><p class="eyebrow">VOICE</p><h2>実践者の声</h2><p class="lead">働き方に合わせて、TikTok Shop LIVEへ取り組んでいます。</p></div>
         <div class="voice-slider-wrap reveal">
           <div class="voice-slider" id="voiceSlider">
-            <article class="voice"><div class="voice-profile"><span class="voice-avatar" aria-hidden="true"></span><div><small>CASE 01</small><h3>20代男性<br>顔出しなし・フルコミット</h3></div></div><div class="voice-body"><span class="voice-metric-label">FIRST MONTH RESULT</span><div class="voice-metric">成果報酬 <strong>60万円</strong></div><p>顔出しなしで取り組み、初月から成果報酬を獲得しました。</p><div class="voice-tags"><span class="voice-tag">顔出しなし</span><span class="voice-tag pink">初月</span></div></div></article>
+            <article class="voice"><div class="voice-profile"><span class="voice-avatar" aria-hidden="true"></span><div><small>CASE 01</small><h3>20代男性<br>顔出しなし<span class="pc-only">・</span><br class="sp-only">フルコミット</h3></div></div><div class="voice-body"><span class="voice-metric-label">FIRST MONTH RESULT</span><div class="voice-metric">成果報酬 <strong>60万円</strong></div><p>顔出しなしで取り組み、初月から成果報酬を獲得しました。</p><div class="voice-tags"><span class="voice-tag">顔出しなし</span><span class="voice-tag pink">初月</span></div></div></article>
             <article class="voice"><div class="voice-profile"><span class="voice-avatar" aria-hidden="true"></span><div><small>CASE 02</small><h3>20代男性<br>副業・1日2時間</h3></div></div><div class="voice-body"><span class="voice-metric-label">MONTHLY SIDE INCOME</span><div class="voice-metric">副収入 <strong>20万円</strong></div><p>1日2時間の副業として取り組み、月20万円の副収入を獲得しました。</p><div class="voice-tags"><span class="voice-tag">副業</span><span class="voice-tag pink">1日2時間</span></div></div></article>
             <article class="voice"><div class="voice-profile"><span class="voice-avatar" aria-hidden="true"></span><div><small>CASE 03</small><h3>30代女性<br>土日のみ配信</h3></div></div><div class="voice-body"><span class="voice-metric-label">MONTHLY SALES</span><div class="voice-metric">売上 <strong>30万円</strong></div><p>土日だけの配信で、月30万円の売上を獲得しました。</p><div class="voice-tags"><span class="voice-tag">土日のみ</span><span class="voice-tag pink">在宅副業</span></div></div></article>
           </div>
@@ -497,9 +509,9 @@
     <!-- 10. School: light introduction only. -->
     <section class="section section-light" id="school">
       <div class="container">
-        <div class="section-head reveal"><p class="eyebrow">SCHOOL</p><h2>ロードマップの先では、<br><span class="text-cyan">実践型スクール</span>で学ぶこともできます</h2></div>
+        <div class="section-head reveal"><p class="eyebrow">SCHOOL</p><h2>ロードマップの先では<br><span class="text-cyan">実践型スクール</span>で<br class="sp-only">学ぶこともできます</h2></div>
         <div class="school-box reveal">
-          <div class="school-copy"><h3>未経験から実践まで、<br>必要な型を段階的に。</h3><p>今のうちにライブ販売の型を学びたい方へ。商品選定から配信設計まで、詳しいご案内はLINE内でお届けします。</p></div>
+          <div class="school-copy"><h3>未経験から実践まで<br>必要な型を段階的に。</h3><p>今のうちにライブ販売の型を学びたい方へ。商品選定から配信設計まで、詳しいご案内はLINE内でお届けします。</p></div>
           <ul class="school-list"><li><span class="school-list-icon">◇</span>商品選定</li><li><span class="school-list-icon">✎</span>ライブ販売台本</li><li><span class="school-list-icon">♧</span>コメント対応</li><li><span class="school-list-icon">▣</span>配信設計</li><li><span class="school-list-icon">✓</span>サポート</li><li><span class="school-list-icon">◎</span>コミュニティ</li></ul>
         </div>
       </div>
@@ -523,7 +535,7 @@
       <div class="container">
         <div class="final-box reveal">
           <p class="eyebrow">START TODAY</p>
-          <h2>競合が増える前に、<br><span class="text-cyan">まずは1日で全体像</span>をつかむ</h2>
+          <h2>競合が増える前に<br><span class="text-cyan">まずは1日で全体像</span><br class="sp-only">をつかむ</h2>
           <p>TikTok Shop LIVEは、早く型を学び、実践イメージを持つほど動き出しやすくなります。無料ロードマップで、ライブ配信・商品紹介・コメント対応・購入導線を確認してください。</p>
           <div class="cta-block"><a class="cta-btn line-link" href="https://lin.ee/pGL7LOU"><span class="cta-icon">L</span>LINEで無料ロードマップを受け取る</a><p class="cta-meta">登録後すぐ受け取り ｜ 今だけ無料</p></div>
         </div>

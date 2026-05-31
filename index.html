@@ -1,308 +1,590 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="TikTok Shopに今から参入する人のための無料攻略ロードマップ。LINE登録ですぐに受け取れます。"
-    />
-    <title>TikTok Shop 無料攻略ロードマップ</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <div class="noise"></div>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="TikTok Shop Roadmap トップへ">
-        <span class="brand-mark">T</span>
-        <span><b>TIKTOK SHOP</b><small>STARTUP ROADMAP</small></span>
-      </a>
-      <a class="header-cta js-line-link" href="#" target="_blank" rel="noopener">
-        <span>LINEで</span>無料受取
-      </a>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TikTok Shop LIVEの始め方を1日で学べる無料ロードマップ。LINE登録後すぐに受け取れます。">
+  <title>TikTok Shop LIVE無料ロードマップ | LINE限定配布</title>
+  <style>
+    :root {
+      --bg: #050505;
+      --surface: #0f0f12;
+      --surface-2: #17171c;
+      --cyan: #00f2ea;
+      --pink: #ff0050;
+      --line: #06c755;
+      --text: #fff;
+      --muted: #d1d5db;
+      --dim: #8b93a3;
+      --border: rgba(255,255,255,.12);
+      --cyan-border: rgba(0,242,234,.32);
+      --cyan-shadow: 0 0 30px rgba(0,242,234,.15);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 82% 4%, rgba(0,242,234,.08), transparent 22rem),
+        radial-gradient(circle at 12% 18%, rgba(255,0,80,.05), transparent 19rem),
+        var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", Meiryo, sans-serif;
+      line-height: 1.8;
+      letter-spacing: .02em;
+    }
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      content: "";
+      opacity: .18;
+      background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(1080px, calc(100% - 40px)); margin-inline: auto; }
+    .section { position: relative; padding: 94px 0; overflow: hidden; }
+    .section-black, .section-light, .section-soft { color: #fff; background: #050505; }
+    .section-head { max-width: 760px; margin: 0 auto 34px; text-align: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 12px; color: var(--cyan); font-size: 11px; font-weight: 900; letter-spacing: .16em; }
+    .eyebrow::before { width: 20px; height: 1px; content: ""; background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
+    h1, h2, h3, p { margin-top: 0; }
+    h2 { margin-bottom: 0; font-size: clamp(29px, 4vw, 46px); font-weight: 950; line-height: 1.35; letter-spacing: -.045em; }
+    .lead { margin: 15px auto 0; color: var(--muted); font-size: 15px; }
+    .text-cyan { color: var(--cyan); text-shadow: 0 0 18px rgba(0,242,234,.3); }
+    .text-pink { color: #ff5b8f; text-shadow: 0 0 18px rgba(255,0,80,.22); }
+    .note { margin: 10px 0 0; color: var(--dim); font-size: 11px; text-align: center; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .section-light .lead, .section-soft .lead { color: var(--muted); }
+    .section-light .eyebrow, .section-soft .eyebrow { color: var(--cyan); }
+    .section-light .eyebrow::before, .section-soft .eyebrow::before { background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
+    .section-light .text-cyan, .section-soft .text-cyan { color: var(--cyan); text-shadow: 0 0 18px rgba(0,242,234,.3); }
+    .section-light .text-pink, .section-soft .text-pink { color: #ff5b8f; text-shadow: 0 0 18px rgba(255,0,80,.22); }
+    .section-light .cta-meta, .section-soft .cta-meta { color: var(--muted); }
 
-    <main>
-      <section id="top" class="hero section">
-        <div class="hero-glow glow-cyan"></div>
-        <div class="hero-glow glow-pink"></div>
-        <div class="hero-copy reveal">
-          <p class="eyebrow"><span>2025.06</span> TIKTOK SHOP JAPAN LAUNCH</p>
-          <div class="launch-badge">日本上陸</div>
-          <h1>
-            <span class="hero-sub">未経験から、最短ルートで始める</span>
-            TikTok Shop<br />
-            <span class="gradient-text">無料攻略ロードマップ</span>
-          </h1>
-          <p class="hero-lead">
-            ショート動画 × ECの新時代。<br />
-            今から参入する人が迷わないための<br />
-            <strong>「最初の30日」実践ガイド</strong>を無料配布中。
-          </p>
-          <a class="line-button hero-button js-line-link" href="#" target="_blank" rel="noopener">
-            <span class="line-icon">LINE</span>
-            <span><b>LINEで無料ロードマップを受け取る</b><small>30秒で登録完了・無料ですぐに読めます</small></span>
-            <span class="arrow">›</span>
-          </a>
-          <p class="trust-note"><span>✓</span> 営業電話なし <span>✓</span> 未経験OK <span>✓</span> スマホで受取</p>
-        </div>
+    /* Header */
+    .topbar { position: fixed; top: 0; right: 0; left: 0; z-index: 20; height: 56px; background: rgba(5,5,5,.84); border-bottom: 1px solid var(--border); backdrop-filter: blur(18px); }
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+    .brand { display: flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 950; letter-spacing: .04em; }
+    .brand-mark { position: relative; width: 21px; height: 21px; border: 2px solid var(--cyan); border-radius: 7px; box-shadow: 3px 3px 0 var(--pink); transform: rotate(-8deg); }
+    .brand-mark::after { position: absolute; inset: 5px; content: ""; background: #fff; border-radius: 50%; }
+    .topbar-cta { padding: 8px 13px; color: #fff; background: var(--line); border-radius: 999px; font-size: 11px; font-weight: 900; }
 
-        <div class="hero-visual reveal delay-1" aria-label="TikTok ShopとLINEのスマホ画面イメージ">
-          <div class="phone-shadow"></div>
-          <div class="phone phone-main">
-            <div class="phone-top"><span></span></div>
-            <div class="shop-screen">
-              <div class="screen-header">
-                <b>TikTok <i>Shop</i></b>
-                <span>⌕　▢</span>
-              </div>
-              <div class="video-card">
-                <div class="video-overlay">
-                  <span class="live-pill">LIVE</span>
-                  <p>便利すぎる<br /><b>話題アイテム</b></p>
-                </div>
-                <div class="video-icons"><span>♡</span><small>1.2k</small><span>♧</span><small>86</small></div>
-                <div class="product-card">
-                  <div class="product-thumb">ITEM</div>
-                  <div><b>毎日使える人気グッズ</b><strong>¥2,980</strong></div>
-                  <button>購入</button>
-                </div>
-              </div>
-              <div class="phone-nav"><span>⌂<small>ホーム</small></span><span>♧<small>ショップ</small></span><span>＋</span><span>♡<small>受信箱</small></span></div>
-            </div>
-          </div>
-          <div class="phone phone-sub">
-            <div class="phone-top"><span></span></div>
-            <div class="line-screen">
-              <div class="line-header">LINE</div>
-              <div class="line-profile">
-                <div class="line-avatar">TS</div>
-                <b>TikTok Shop<br />無料攻略講座</b>
-              </div>
-              <p class="chat chat-left">ご登録ありがとうございます！</p>
-              <p class="chat chat-left">無料ロードマップを<br />お受け取りください。</p>
-              <div class="gift-card">
-                <span>LIMITED PRESENT</span>
-                <b>TikTok Shop<br /><em>START GUIDE</em></b>
-                <small>最初の30日でやることリスト</small>
-              </div>
-            </div>
-          </div>
-          <div class="float-card card-top"><b>FREE</b><span>LINE限定配布</span></div>
-          <div class="float-card card-bottom"><b>30</b><span>DAY ROADMAP</span></div>
-        </div>
-      </section>
+    /* CTA */
+    .cta-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: min(100%, 460px);
+      min-height: 68px;
+      padding: 13px 18px;
+      overflow: hidden;
+      color: #fff;
+      background: linear-gradient(135deg, #06c755, #00a941);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 13px;
+      box-shadow: 0 12px 32px rgba(6,199,85,.28), inset 0 1px 0 rgba(255,255,255,.25);
+      font-size: 16px;
+      font-weight: 950;
+      line-height: 1.35;
+      text-align: center;
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+    .cta-btn::after { position: absolute; top: -70%; left: -30%; width: 15%; height: 240%; content: ""; background: rgba(255,255,255,.28); transform: rotate(24deg); animation: shine 3.8s infinite; }
+    .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(6,199,85,.4); }
+    .cta-icon { display: grid; width: 27px; height: 27px; flex: 0 0 auto; place-items: center; color: var(--line); background: #fff; border-radius: 50%; font-size: 12px; font-weight: 950; }
+    .cta-meta { margin: 9px 0 0; color: var(--muted); font-size: 12px; font-weight: 800; }
+    .cta-block { display: grid; justify-items: center; margin-top: 30px; text-align: center; }
+    .fixed-cta { position: fixed; right: 0; bottom: 0; left: 0; z-index: 30; display: none; padding: 8px 13px calc(8px + env(safe-area-inset-bottom)); background: rgba(5,5,5,.88); border-top: 1px solid var(--border); backdrop-filter: blur(16px); transform: translateY(120%); transition: transform .35s ease; }
+    .fixed-cta.show { transform: none; }
+    .fixed-cta .cta-btn { min-height: 56px; margin-inline: auto; border-radius: 11px; font-size: 14px; }
+    @keyframes shine { 0%, 70% { left: -30%; } 100% { left: 125%; } }
 
-      <section class="news-strip">
-        <div class="marquee">
-          <span>NEW MARKET</span> TikTok Shop Japan <i>×</i> Short Video Commerce
-          <span>NEW MARKET</span> TikTok Shop Japan <i>×</i> Short Video Commerce
-        </div>
-      </section>
+    /* Shared cards */
+    .cards { display: grid; gap: 14px; }
+    .card { position: relative; padding: 24px; background: #fff; border: 1px solid #e5e7eb; border-radius: 22px; box-shadow: 0 18px 50px rgba(0,0,0,.28); transition: transform .25s ease, box-shadow .25s ease; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 24px 58px rgba(0,0,0,.34); }
+    .card::before { position: absolute; top: 0; right: 20px; left: 20px; height: 1px; content: ""; background: linear-gradient(90deg, transparent, rgba(0,242,234,.55), transparent); }
+    .card-icon { display: grid; width: 38px; height: 38px; place-items: center; color: var(--cyan); background: rgba(0,242,234,.08); border: 1px solid rgba(0,242,234,.24); border-radius: 11px; font-size: 19px; font-weight: 950; }
+    .card h3 { margin: 13px 0 6px; color: #111827; font-size: 17px; line-height: 1.55; }
+    .card p { margin-bottom: 0; color: #4b5563; font-size: 13px; }
+    .section-light .card, .section-soft .card { background: #fff; border-color: #e5e7eb; box-shadow: 0 18px 50px rgba(0,0,0,.28); }
+    .section-light .card::before, .section-soft .card::before { background: linear-gradient(90deg, transparent, rgba(0,189,182,.42), transparent); }
+    .section-light .card-icon, .section-soft .card-icon { color: #008f8a; background: #ecfeff; border-color: #b8f4f1; }
+    .section-light .card p, .section-soft .card p { color: #4b5563; }
 
-      <section class="section why">
-        <div class="section-heading reveal">
-          <p class="eyebrow">WHY NOW?</p>
-          <h2>なぜ、<span class="gradient-text">今</span><br />TikTok Shopなのか。</h2>
-          <p>市場が整ってからではなく、立ち上がる瞬間に学び始める。<br />その小さな差が、あとで大きな経験値になります。</p>
-        </div>
-        <div class="feature-grid">
-          <article class="feature-card reveal">
-            <span class="card-number">01</span>
-            <div class="feature-icon">↗</div>
-            <h3>ショート動画市場が<br />購買につながる</h3>
-            <p>見つける・気になる・買うが、ひとつのアプリ内で完結。新しい購買体験が始まっています。</p>
-          </article>
-          <article class="feature-card reveal delay-1">
-            <span class="card-number">02</span>
-            <div class="feature-icon">◎</div>
-            <h3>先行者として<br />経験を積める</h3>
-            <p>新しい市場だからこそ、早い段階で試行錯誤した経験そのものが強みになります。</p>
-          </article>
-          <article class="feature-card reveal delay-2">
-            <span class="card-number">03</span>
-            <div class="feature-icon">▶</div>
-            <h3>未経験でも<br />始めやすい</h3>
-            <p>大きな撮影機材は不要。スマホを軸に、小さく試しながら改善していけます。</p>
-          </article>
-        </div>
-      </section>
+    /* Production image frame. Keep only these three image slots in the LP. */
+    .image-frame { width: min(100%, 880px); margin: 30px auto 0; padding: 8px; background: rgba(15,15,18,.86); border: 1px solid var(--cyan-border); border-radius: 30px; box-shadow: 0 24px 80px rgba(0,242,234,.12), 0 24px 80px rgba(255,0,80,.10); }
+    .production-image { display: block; width: 100%; height: auto; border-radius: 22px; }
+    .image-placeholder { display: none; min-height: 260px; padding: 30px 18px; place-items: center; align-content: center; gap: 8px; color: var(--muted); background: linear-gradient(145deg, rgba(0,242,234,.06), rgba(255,0,80,.05)); border: 1px dashed rgba(0,242,234,.4); border-radius: 11px; text-align: center; }
+    .image-placeholder strong { color: var(--cyan); font-size: 16px; }
+    .image-placeholder code { color: #fff; font-size: 12px; }
+    .image-frame.missing .production-image { display: none; }
+    .image-frame.missing .image-placeholder { display: grid; }
+    .content-visual-frame { margin-top: 28px; }
+    .concerns-visual-frame { width: min(100%, 800px); }
+    .why-visual-frame { width: min(100%, 760px); }
+    .reasons-visual-frame { width: min(100%, 940px); }
 
-      <section class="section worries">
-        <div class="section-heading center reveal">
-          <p class="eyebrow">YOUR PROBLEMS</p>
-          <h2>こんな悩み、<br /><span class="pink">ありませんか？</span></h2>
-        </div>
-        <div class="worry-list">
-          <div class="worry-item reveal"><span>?</span><p>TikTok Shopが気になるけど、<b>何から始めればいいか</b>わからない</p></div>
-          <div class="worry-item reveal"><span>?</span><p>副業に興味はあるけど、<b>難しい知識や高額な初期費用</b>は不安</p></div>
-          <div class="worry-item reveal"><span>?</span><p>ショート動画を投稿したことがなく、<b>自分にもできるか</b>心配</p></div>
-          <div class="worry-item reveal"><span>?</span><p>情報が増える前に、まずは<b>信頼できる基礎</b>を押さえておきたい</p></div>
-        </div>
-        <p class="bridge reveal">その悩みを解消するために、<br /><b>最初に知っておきたいことだけ</b>をまとめました。</p>
-      </section>
+    /* 1. Hero */
+    .hero { padding: 94px 0 68px; background: #050505; }
+    .hero-grid { display: flex; flex-direction: column; align-items: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 7px; padding: 6px 11px; color: #fff; background: rgba(255,0,80,.1); border: 1px solid rgba(255,0,80,.4); border-radius: 999px; font-size: 11px; font-weight: 900; }
+    .hero-badge::before { width: 7px; height: 7px; content: ""; background: var(--pink); border-radius: 50%; box-shadow: 0 0 12px var(--pink); }
+    .hero h1 { margin: 20px 0 0; font-size: clamp(26px, 3.2vw, 40px); font-weight: 950; line-height: 1.4; letter-spacing: -.05em; }
+    .hero-copy p { margin: 14px 0 0; color: var(--muted); font-size: 14px; }
+    .hero-points { display: grid; gap: 8px; margin: 16px 0 0; padding: 0; list-style: none; }
+    .hero-points li { display: flex; gap: 8px; color: #fff; font-size: 13px; font-weight: 800; }
+    .hero-points li::before { color: var(--cyan); content: "✓"; font-weight: 950; }
+    .hero .cta-btn { margin-top: 22px; }
+    .hero-image { order: 1; width: min(100%, 720px); margin-top: 0; }
+    .hero-copy { order: 2; width: min(100%, 690px); margin-top: 26px; text-align: center; }
+    .hero-action { order: 3; width: min(100%, 690px); text-align: center; }
+    .hero-points { justify-content: center; }
+    .hero-points li { justify-content: center; }
+    .hero .cta-btn { margin-inline: auto; }
+    .hero .cta-meta { text-align: center; }
 
-      <section class="section present">
-        <div class="present-glow"></div>
-        <div class="section-heading center reveal">
-          <p class="eyebrow">LINE LIMITED PRESENT</p>
-          <h2>LINE登録で<br /><span class="gradient-text">無料プレゼント</span></h2>
-          <p>最初の一歩を迷わないための<br class="sp-only" />実践ロードマップをお届けします。</p>
-        </div>
-        <div class="roadmap-book reveal">
-          <div class="book-ring"></div>
-          <div class="book-cover">
-            <div class="book-top">LINE FOLLOWER LIMITED</div>
-            <p>TIKTOK SHOP</p>
-            <h3>STARTUP<br /><span>ROADMAP</span></h3>
-            <div class="book-line"></div>
-            <b>未経験から始める<br />最初の30日 実践ガイド</b>
-            <small>2025 JAPAN EDITION</small>
-          </div>
-        </div>
-        <div class="benefit-grid">
-          <div class="benefit-item reveal"><span>01</span><p>TikTok Shopの<br /><b>基本構造</b></p></div>
-          <div class="benefit-item reveal delay-1"><span>02</span><p>最初の30日で<br /><b>やることリスト</b></p></div>
-          <div class="benefit-item reveal"><span>03</span><p>初心者向け<br /><b>商品選定の考え方</b></p></div>
-          <div class="benefit-item reveal delay-1"><span>04</span><p>投稿で迷わない<br /><b>動画の型</b></p></div>
-        </div>
-        <div class="cta-wrap reveal">
-          <a class="line-button js-line-link" href="#" target="_blank" rel="noopener">
-            <span class="line-icon">LINE</span>
-            <span><b>LINEで無料ロードマップを受け取る</b><small>今すぐ無料で受け取る</small></span>
-            <span class="arrow">›</span>
-          </a>
-        </div>
-      </section>
+    /* 2. Pain */
+    .pain-grid { grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .bridge { max-width: 780px; margin: 30px auto 0; color: #fff; font-size: 19px; font-weight: 950; line-height: 1.7; text-align: center; }
 
-      <section class="section mechanism">
-        <div class="section-heading reveal">
-          <p class="eyebrow">HOW IT WORKS</p>
-          <h2>TikTok Shopで<br /><span class="cyan">販売につながる仕組み</span></h2>
-          <p>難しい専門用語は不要。まずはシンプルな流れをつかめば大丈夫です。</p>
-        </div>
-        <div class="steps">
-          <div class="step reveal">
-            <span>STEP 01</span><div class="step-icon">▶</div><div><h3>動画で商品と出会う</h3><p>ショート動画やライブ配信で、自然な形で商品の魅力を伝えます。</p></div>
-          </div>
-          <div class="step reveal">
-            <span>STEP 02</span><div class="step-icon">♧</div><div><h3>アプリ内で商品を確認</h3><p>視聴者は気になった商品をすぐにチェック。興味が途切れません。</p></div>
-          </div>
-          <div class="step reveal">
-            <span>STEP 03</span><div class="step-icon">✓</div><div><h3>そのまま購入へ</h3><p>外部サイトへ移動せずに購入まで完結。スムーズな導線が特徴です。</p></div>
-          </div>
-        </div>
-      </section>
+    /* 3. Easy reasons */
+    .reason-grid { grid-template-columns: repeat(3, 1fr); }
+    .card-label { color: #008f8a; font-size: 10px; font-weight: 950; letter-spacing: .14em; }
+    /* One generated sprite keeps the seven card visuals lightweight and consistent. */
+    .visual-card { overflow: hidden; background: #fff; border: 1px solid rgba(255,255,255,.16); border-radius: 23px; box-shadow: 0 20px 52px rgba(0,0,0,.34); transition: transform .25s ease, box-shadow .25s ease; }
+    .visual-card:hover { transform: translateY(-6px); box-shadow: 0 27px 62px rgba(0,0,0,.42); }
+    .visual-card-top { position: relative; display: grid; height: 138px; place-items: center; overflow: visible; background: linear-gradient(145deg, #303036, #17171b); }
+    .visual-card-top::after { position: absolute; right: 0; bottom: 0; left: 0; height: 2px; content: ""; background: linear-gradient(90deg, transparent, rgba(0,242,234,.8), rgba(255,0,80,.7), transparent); }
+    .visual-card-photo { width: 148px; height: 148px; margin-top: -26px; background-image: url("assets/images/card-visual-sprite.png"); background-repeat: no-repeat; background-size: 400% 200%; border: 5px solid #fff; border-radius: 50%; box-shadow: 0 12px 25px rgba(0,0,0,.28); }
+    .sprite-1 { background-position: 0 0; }
+    .sprite-2 { background-position: 33.333% 0; }
+    .sprite-3 { background-position: 66.666% 0; }
+    .sprite-4 { background-position: 100% 0; }
+    .sprite-5 { background-position: 0 100%; }
+    .sprite-6 { background-position: 33.333% 100%; }
+    .sprite-7 { background-position: 66.666% 100%; }
+    .visual-card-body { display: grid; min-height: 148px; padding: 24px 18px 22px; align-content: center; text-align: center; }
+    .visual-card-body h3 { margin: 0; color: #111827; font-size: 17px; font-weight: 950; line-height: 1.65; letter-spacing: -.025em; }
+    .visual-card-body p { margin: 9px 0 0; color: #4b5563; font-size: 12px; line-height: 1.75; }
+    .visual-card-body .card-label { display: block; margin-bottom: 8px; }
+    .reason-card .visual-card-top { height: 158px; background: linear-gradient(145deg, #263438, #16191c); }
+    .reason-card .visual-card-photo { width: 166px; height: 166px; }
+    .reason-card .visual-card-body { min-height: 180px; padding: 25px 23px; }
+    .reason-card .visual-card-body h3 { font-size: 18px; }
 
-      <section class="section voices">
-        <div class="section-heading center reveal">
-          <p class="eyebrow">USER VOICES</p>
-          <h2>ロードマップを見た<br /><span class="gradient-text">先行ユーザーの声</span></h2>
-        </div>
-        <div class="voice-grid">
-          <article class="voice-card reveal">
-            <div class="voice-head"><span>会社員</span><b>30代 / 男性</b></div>
-            <div class="stars">★★★★★</div>
-            <p>何となく気になっていたTikTok Shopですが、最初にやるべきことが整理されていて、行動に移しやすかったです。</p>
-          </article>
-          <article class="voice-card reveal delay-1">
-            <div class="voice-head"><span>副業初心者</span><b>20代 / 女性</b></div>
-            <div class="stars">★★★★★</div>
-            <p>専門用語ばかりではなく、初心者目線で書かれていたので安心しました。スマホで読めるのも助かります。</p>
-          </article>
-          <article class="voice-card reveal delay-2">
-            <div class="voice-head"><span>EC経験者</span><b>40代 / 男性</b></div>
-            <div class="stars">★★★★★</div>
-            <p>従来のECとの違いがわかりやすかったです。市場が動き始める今のうちに試してみようと思えました。</p>
-          </article>
-        </div>
-        <p class="annotation">※個人の感想です。成果を保証するものではありません。</p>
-      </section>
+    /* Legacy HTML fallbacks are kept styled for future copy tests. Production uses the visual. */
+    .why-panel { padding: 30px; color: #111827; background: linear-gradient(145deg, #fff, #f8fbfc); border: 1px solid #e5e7eb; border-radius: 28px; box-shadow: 0 22px 62px rgba(0,0,0,.34); }
+    .why-panel-top { display: grid; grid-template-columns: 1.04fr .96fr; gap: 24px; align-items: center; padding-bottom: 24px; border-bottom: 1px solid #e5e7eb; }
+    .why-panel h3 { margin: 0; font-size: clamp(25px, 3vw, 37px); line-height: 1.42; letter-spacing: -.05em; }
+    .why-panel-copy p { margin: 12px 0 0; color: #4b5563; font-size: 14px; }
+    .phase-mini { padding: 18px; background: #111318; border-radius: 18px; }
+    .phase-mini-label { color: var(--cyan); font-size: 10px; font-weight: 950; letter-spacing: .13em; }
+    .phase-track { position: relative; height: 8px; margin: 30px 4px 15px; background: linear-gradient(90deg, var(--cyan), #9ca3af 52%, #4b5563); border-radius: 999px; }
+    .phase-pin { position: absolute; top: -22px; left: 14%; padding: 3px 8px; color: #fff; background: var(--pink); border-radius: 999px; box-shadow: 0 0 14px rgba(255,0,80,.38); font-size: 10px; font-weight: 950; }
+    .phase-points { display: flex; justify-content: space-between; color: #9ca3af; font-size: 10px; font-weight: 800; }
+    .phase-points strong { color: var(--cyan); }
+    .why-reasons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; }
+    .why-reason { padding: 17px; background: #f7f8fa; border: 1px solid #e5e7eb; border-radius: 15px; }
+    .why-no { color: #008f8a; font-size: 10px; font-weight: 950; letter-spacing: .13em; }
+    .why-reason h4 { margin: 8px 0 5px; font-size: 15px; line-height: 1.55; }
+    .why-reason p { margin: 0; color: #4b5563; font-size: 12px; line-height: 1.75; }
 
-      <section class="section school">
-        <div class="school-box reveal">
-          <p class="eyebrow">ABOUT US</p>
-          <h2>ひとりで迷わず、<br /><span class="cyan">実践できる環境</span>を。</h2>
-          <p>
-            TikTok Shop実践スクールでは、未経験からでも一歩ずつ進めるように、
-            基礎知識から動画の考え方、運用改善までをわかりやすくお伝えしています。
-          </p>
-          <div class="school-points">
-            <span>✓ 初心者向け</span><span>✓ 実践ベース</span><span>✓ スマホで学べる</span>
-          </div>
-          <p class="school-note">まずは無料ロードマップで、TikTok Shopの可能性を確かめてください。</p>
-        </div>
-      </section>
+    /* 4. Beginner-friendly reasons: icon cards intentionally differ from problem cards. */
+    .reason-info { min-height: 100%; background: linear-gradient(145deg, #fff, #f8fbfc); }
+    .reason-info .card-icon { width: 54px; height: 54px; margin-top: 13px; color: #008f8a; background: linear-gradient(145deg, #d9fffd, #f3ffff); border-color: #b8f4f1; border-radius: 16px; font-size: 24px; }
 
-      <section class="section faq">
-        <div class="section-heading center reveal">
-          <p class="eyebrow">FAQ</p>
-          <h2>よくある<span class="gradient-text">質問</span></h2>
-        </div>
-        <div class="faq-list">
-          <details class="faq-item reveal">
-            <summary><span>Q.</span>本当に無料で受け取れますか？<i></i></summary>
-            <p><span>A.</span>はい。LINE公式アカウントを友だち追加していただくと、無料でお受け取りいただけます。</p>
-          </details>
-          <details class="faq-item reveal">
-            <summary><span>Q.</span>TikTok未経験でも大丈夫ですか？<i></i></summary>
-            <p><span>A.</span>大丈夫です。これから始める方に向けて、基礎からわかりやすくまとめています。</p>
-          </details>
-          <details class="faq-item reveal">
-            <summary><span>Q.</span>スマホだけでも読めますか？<i></i></summary>
-            <p><span>A.</span>はい。LINEで受け取ったあと、そのままスマホで気軽にご覧いただけます。</p>
-          </details>
-          <details class="faq-item reveal">
-            <summary><span>Q.</span>登録後に営業電話はありますか？<i></i></summary>
-            <p><span>A.</span>電話番号の入力は不要です。営業電話がかかってくることもありません。</p>
-          </details>
-        </div>
-      </section>
+    /* 6. Bonus */
+    .bonus-grid { grid-template-columns: repeat(4, 1fr); }
+    .bonus-no { color: var(--cyan); font-size: 11px; font-weight: 950; letter-spacing: .12em; }
+    .bonus-card .card-icon { margin-top: 11px; }
+    .bonus-card h3 { font-size: 15px; }
+    .bonus-card p { font-size: 12px; }
+    .benefit-panel { display: grid; grid-template-columns: 1.12fr .88fr; gap: 24px; padding: 28px; color: #111827; background: linear-gradient(145deg, #fff, #f9fbfc); border: 1px solid #e5e7eb; border-radius: 28px; box-shadow: 0 22px 62px rgba(0,0,0,.34); }
+    .benefit-thumbnail { position: relative; align-self: center; overflow: hidden; background: #121318; border: 1px solid rgba(0,242,234,.32); border-radius: 19px; box-shadow: 0 18px 38px rgba(0,0,0,.24), 0 0 32px rgba(255,0,80,.1); }
+    .benefit-thumbnail img { display: block; width: 100%; height: auto; }
+    .benefit-thumbnail-tag { position: absolute; right: 12px; bottom: 12px; padding: 6px 10px; color: #fff; background: rgba(255,0,80,.92); border: 1px solid rgba(255,255,255,.32); border-radius: 999px; box-shadow: 0 8px 20px rgba(255,0,80,.22); font-size: 10px; font-weight: 950; }
+    .benefit-list { display: grid; gap: 9px; align-content: center; }
+    .benefit-item { display: grid; grid-template-columns: 44px 1fr; gap: 11px; align-items: center; padding: 12px; background: #f7f8fa; border: 1px solid #e5e7eb; border-radius: 13px; }
+    .benefit-item b { color: #008f8a; font-size: 11px; letter-spacing: .08em; }
+    .benefit-item h3 { margin: 1px 0 0; font-size: 14px; line-height: 1.45; }
+    .benefit-item-icon { display: grid; width: 42px; height: 42px; place-items: center; color: #008f8a; background: #e9ffff; border-radius: 12px; font-size: 18px; font-weight: 950; }
 
-      <section class="section final-cta">
-        <div class="final-lines"></div>
-        <div class="section-heading center reveal">
-          <p class="eyebrow">START TODAY</p>
-          <h2>新しい市場のスタートを、<br /><span class="gradient-text">あなたのチャンス</span>に。</h2>
-          <p>まずは無料ロードマップで、<br />TikTok Shopの全体像をつかんでください。</p>
-        </div>
-        <div class="final-gift reveal">
-          <div class="gift-mini">FREE<br /><small>ROADMAP</small></div>
-          <p><span>LINE登録者限定</span><b>最初の30日 実践ガイド</b><small>無料プレゼント中</small></p>
-        </div>
-        <div class="cta-wrap reveal">
-          <a class="line-button js-line-link" href="#" target="_blank" rel="noopener">
-            <span class="line-icon">LINE</span>
-            <span><b>LINEで無料ロードマップを受け取る</b><small>30秒で登録完了・今すぐ読めます</small></span>
-            <span class="arrow">›</span>
-          </a>
-          <p class="trust-note"><span>✓</span> 営業電話なし <span>✓</span> 未経験OK <span>✓</span> 登録無料</p>
-        </div>
-      </section>
-    </main>
+    /* 8. Voices */
+    .voice-slider-wrap { position: relative; max-width: 920px; margin: 0 auto; }
+    .voice-slider { display: flex; gap: 16px; padding: 18px 4px 26px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-behavior: smooth; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .voice-slider::-webkit-scrollbar { display: none; }
+    .voice { min-width: min(82vw, 430px); overflow: hidden; color: #111827; background: #fff; border: 1px solid rgba(255,255,255,.32); border-radius: 24px; box-shadow: 0 22px 56px rgba(0,0,0,.34); scroll-snap-align: start; }
+    .voice-profile { position: relative; display: grid; grid-template-columns: 82px 1fr; gap: 15px; align-items: center; min-height: 132px; padding: 22px; overflow: hidden; color: #fff; background: linear-gradient(145deg, #111318, #23262c); }
+    .voice-profile::after { position: absolute; right: -60px; bottom: -80px; width: 180px; height: 180px; content: ""; background: radial-gradient(circle, rgba(0,242,234,.22), transparent 67%); }
+    .voice:nth-child(2) .voice-profile::after { background: radial-gradient(circle, rgba(255,0,80,.18), transparent 67%); }
+    .voice-avatar { position: relative; display: block; width: 82px; height: 82px; overflow: hidden; background: radial-gradient(circle at 50% 35%, #56616a, #1b2025 68%); border: 1px solid rgba(0,242,234,.5); border-radius: 50%; box-shadow: 0 0 0 5px rgba(0,242,234,.07), 0 10px 25px rgba(0,0,0,.32); }
+    .voice:nth-child(2) .voice-avatar { border-color: rgba(255,0,80,.55); box-shadow: 0 0 0 5px rgba(255,0,80,.07), 0 10px 25px rgba(0,0,0,.32); }
+    .voice-avatar::before { position: absolute; top: 16px; left: 27px; width: 29px; height: 29px; content: ""; background: linear-gradient(#111820, #080b0f); border-radius: 50%; box-shadow: inset 0 -3px 5px rgba(255,255,255,.06); }
+    .voice-avatar::after { position: absolute; bottom: -19px; left: 10px; width: 62px; height: 55px; content: ""; background: linear-gradient(#121a22, #06080b); border-radius: 46% 46% 0 0; box-shadow: inset 0 4px 8px rgba(255,255,255,.05); }
+    .voice-profile small { display: block; color: var(--cyan); font-size: 10px; font-weight: 950; letter-spacing: .14em; }
+    .voice:nth-child(2) .voice-profile small { color: #ff759e; }
+    .voice h3 { position: relative; z-index: 1; margin: 6px 0 0; font-size: 16px; line-height: 1.55; }
+    .voice-body { padding: 22px; }
+    .voice-metric-label { color: #6b7280; font-size: 10px; font-weight: 950; letter-spacing: .14em; }
+    .voice-metric { margin: 5px 0 0; color: #111827; font-size: 25px; font-weight: 950; line-height: 1.35; letter-spacing: -.04em; }
+    .voice-metric strong { color: #ff0050; font-size: 34px; }
+    .voice p { margin: 14px 0 0; color: #4b5563; font-size: 13px; font-weight: 700; line-height: 1.8; }
+    .voice-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 15px; }
+    .voice-tag { padding: 5px 8px; color: #008f8a; background: #ecfeff; border: 1px solid #c7f9f7; border-radius: 999px; font-size: 10px; font-weight: 900; }
+    .voice-tag.pink { color: #d70b4b; background: #fff1f5; border-color: #ffd4e1; }
+    .voice-slider-controls { display: flex; justify-content: center; gap: 10px; margin-top: 5px; }
+    .voice-slider-btn { display: grid; width: 42px; height: 42px; place-items: center; color: #fff; background: #15171b; border: 1px solid rgba(0,242,234,.35); border-radius: 50%; box-shadow: 0 8px 22px rgba(0,0,0,.24); cursor: pointer; font-size: 20px; transition: transform .2s ease, border-color .2s ease; }
+    .voice-slider-btn:hover { border-color: var(--cyan); transform: translateY(-2px); }
+    .voice-slider-note { margin: 15px auto 0; color: var(--dim); font-size: 10px; line-height: 1.7; text-align: center; }
 
-    <footer>
-      <a class="brand" href="#top">
-        <span class="brand-mark">T</span>
-        <span><b>TIKTOK SHOP</b><small>STARTUP ROADMAP</small></span>
-      </a>
-      <p>© 2025 TikTok Shop Startup Roadmap</p>
-      <small>本ページはTikTok公式サイトではありません。</small>
-    </footer>
+    /* 9. School */
+    .school-box { display: grid; grid-template-columns: .92fr 1.08fr; gap: 24px; padding: 28px; color: #111827; background: linear-gradient(145deg, #fff, #f9fbfc); border: 1px solid #e5e7eb; border-radius: 26px; box-shadow: 0 18px 50px rgba(0,0,0,.28); }
+    .school-copy h3 { margin-bottom: 8px; font-size: 23px; line-height: 1.5; }
+    .school-copy p { margin-bottom: 0; color: #4b5563; font-size: 13px; }
+    .school-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .school-list li { padding: 11px; color: #374151; background: #f7f8fa; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 12px; font-weight: 800; }
+    .school-list li { display: flex; align-items: center; gap: 7px; }
+    .school-list-icon { display: grid; width: 25px; height: 25px; flex: 0 0 auto; place-items: center; color: #008f8a; background: #ecfeff; border-radius: 7px; font-size: 13px; font-weight: 950; }
 
-    <div class="sticky-cta">
-      <a class="js-line-link" href="#" target="_blank" rel="noopener">
-        <span class="line-icon">LINE</span>
-        <span><small>無料ロードマップを今すぐ受取</small><b>LINEで無料登録する</b></span>
-        <span class="arrow">›</span>
-      </a>
+    /* 10. FAQ */
+    .faq { display: grid; gap: 9px; max-width: 820px; margin: 0 auto; }
+    .faq-item { overflow: hidden; background: #fff; border: 1px solid #e5e7eb; border-radius: 11px; box-shadow: 0 5px 16px rgba(17,24,39,.04); }
+    .faq-q { display: flex; width: 100%; padding: 16px; align-items: center; justify-content: space-between; gap: 10px; color: #111827; background: transparent; border: 0; cursor: pointer; font-size: 13px; font-weight: 900; text-align: left; }
+    .faq-q span:first-child::before { margin-right: 8px; color: var(--cyan); content: "Q."; }
+    .faq-plus { color: var(--cyan); font-size: 21px; line-height: 1; transition: transform .25s ease; }
+    .faq-item.open .faq-plus { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; color: #4b5563; transition: max-height .3s ease; }
+    .faq-a p { margin: 0; padding: 0 16px 16px 39px; font-size: 12px; }
+
+    /* 11. Final */
+    .final { padding: 102px 0 120px; background: radial-gradient(circle at 50% 54%, rgba(0,242,234,.1), transparent 30rem); text-align: center; }
+    .final-box { max-width: 820px; margin: auto; padding: 38px 25px; background: rgba(15,15,18,.91); border: 1px solid var(--cyan-border); border-radius: 20px; box-shadow: var(--cyan-shadow); }
+    .final h2 { font-size: clamp(28px, 4vw, 44px); }
+    .final p { max-width: 650px; margin: 15px auto 0; color: var(--muted); font-size: 14px; }
+    footer { padding: 20px 0 94px; color: var(--dim); border-top: 1px solid var(--border); font-size: 10px; text-align: center; }
+
+    @media (max-width: 860px) {
+      .hero-grid { gap: 0; }
+      .pain-grid { grid-template-columns: repeat(2, 1fr); }
+      .bonus-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-panel-top, .benefit-panel { grid-template-columns: 1fr; }
+      .school-box { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      body { padding-bottom: 72px; }
+      .container { width: min(100% - 28px, 540px); }
+      .section { padding: 68px 0; }
+      .topbar { height: 51px; }
+      .topbar .container { width: min(100% - 22px, 540px); }
+      .brand { font-size: 10px; }
+      .brand-mark { width: 18px; height: 18px; }
+      .topbar-cta { padding: 7px 9px; font-size: 9px; }
+      .fixed-cta { display: block; }
+      .hero { padding: 78px 0 45px; }
+      .hero-grid { display: flex; flex-direction: column; }
+      .hero-badge { align-self: center; font-size: 10px; }
+      .hero h1 { margin: 17px 0 0; font-size: 24px; text-align: center; }
+      .hero-copy p { margin: 8px 0 0; font-size: 13px; text-align: center; }
+      .hero-points { display: none; }
+      .hero-image { order: 1; margin-top: 0; }
+      .hero-copy { order: 2; margin-top: 18px; }
+      .hero-action { order: 3; width: 100%; }
+      .hero .cta-btn { width: 100%; margin-top: 18px; }
+      .hero .cta-meta { margin-top: 8px; }
+      .image-frame { padding: 5px; border-radius: 13px; }
+      .production-image { border-radius: 16px; }
+      .image-placeholder { min-height: 190px; padding: 20px 12px; }
+      .section-head { margin-bottom: 25px; }
+      h2 { font-size: 28px; }
+      .lead { margin-top: 12px; font-size: 13px; }
+      .pain-grid, .reason-grid, .bonus-grid { grid-template-columns: 1fr; }
+      .voice-slider { margin-right: -14px; padding-right: 14px; }
+      .voice { min-width: min(85vw, 340px); padding: 21px; }
+      .bridge { margin-top: 24px; font-size: 16px; }
+      .card { padding: 17px; }
+      .card h3 { font-size: 15px; }
+      .card p { font-size: 12px; }
+      .visual-card { width: min(100%, 390px); margin-inline: auto; }
+      .visual-card-top { height: 122px; }
+      .visual-card-photo { width: 136px; height: 136px; margin-top: -22px; }
+      .visual-card-body { min-height: 116px; padding: 20px 16px; }
+      .visual-card-body h3 { font-size: 16px; }
+      .reason-card .visual-card-top { height: 138px; }
+      .reason-card .visual-card-photo { width: 150px; height: 150px; }
+      .reason-card .visual-card-body { min-height: 146px; padding: 21px 18px; }
+      .reason-card .visual-card-body h3 { font-size: 17px; }
+      .why-panel { padding: 20px; border-radius: 22px; }
+      .why-panel-top { gap: 18px; padding-bottom: 19px; }
+      .why-reasons { grid-template-columns: 1fr; }
+      .benefit-panel { padding: 18px; border-radius: 22px; }
+      .bonus-card { display: grid; grid-template-columns: 47px 1fr; column-gap: 10px; align-items: center; }
+      .bonus-no { grid-column: 1 / -1; }
+      .bonus-card .card-icon { margin-top: 7px; }
+      .bonus-card h3 { margin: 7px 0 1px; }
+      .bonus-card p { grid-column: 2; }
+      .school-box { padding: 18px; }
+      .school-copy h3 { font-size: 19px; }
+      .school-list { grid-template-columns: 1fr; gap: 6px; }
+      .faq-q { padding: 14px; font-size: 12px; }
+      .faq-a p { padding: 0 14px 14px 35px; font-size: 11px; }
+      .final { padding: 73px 0 78px; }
+      .final-box { padding: 28px 17px; }
+      .final p { font-size: 13px; }
+      footer { padding-bottom: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <!-- Replace this placeholder brand with the approved production logo if needed. -->
+      <a class="brand" href="#top" aria-label="ページ上部へ"><span class="brand-mark"></span>TikTok Shop LIVE GUIDE</a>
+      <a class="topbar-cta line-link" href="https://lin.ee/pGL7LOU">無料で受け取る</a>
     </div>
-    <script src="./script.js"></script>
-  </body>
+  </header>
+
+  <main>
+    <!-- 1. FV: replace only assets/images/hero-tiktok-live.png with the approved production visual. -->
+    <section class="hero section" id="top">
+      <div class="container hero-grid">
+        <div class="image-frame hero-image reveal">
+          <img class="production-image" src="assets/images/hero-tiktok-live.png" alt="TikTok Shop LIVEの始め方を学べる無料ロードマップ">
+          <div class="image-placeholder"><strong>FVメインビジュアル</strong><code>assets/images/hero-tiktok-live.png</code><span>このパスに制作済み画像を配置してください</span></div>
+        </div>
+        <div class="hero-copy reveal">
+          <span class="hero-badge">LINE登録者限定・無料配布</span>
+          <h1>TikTok Shop LIVEの始め方を、<br><span class="text-cyan">LINEで無料配布中</span></h1>
+          <p>未経験でも迷わない。まずは1日で全体像をつかむ。</p>
+        </div>
+        <div class="hero-action reveal">
+          <ul class="hero-points">
+            <li>登録後すぐにロードマップを受け取れる</li>
+            <li>スマホで見られる初心者向けガイド</li>
+          </ul>
+          <a class="cta-btn line-link" href="https://lin.ee/pGL7LOU"><span class="cta-icon">L</span>LINEで無料ロードマップを受け取る</a>
+          <p class="cta-meta">登録後すぐ受け取り ｜ 今だけ無料</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PROBLEM visual: replace only assets/images/concerns-visual.png. -->
+    <section class="section section-soft" id="concerns">
+      <div class="container">
+        <div class="section-head reveal"><p class="eyebrow">YOUR CONCERNS</p><h2>こんな悩み、<span class="text-pink">ありませんか？</span></h2><p class="lead">TikTok Shop LIVEを始めたいけれど、最初の一歩でつまずく人は少なくありません。</p></div>
+        <div class="image-frame content-visual-frame concerns-visual-frame reveal">
+          <img class="production-image" src="assets/images/concerns-visual.png" alt="TikTok Shop LIVEを始める前によくある4つの悩み">
+          <div class="image-placeholder"><strong>悩み訴求ビジュアル</strong><code>assets/images/concerns-visual.png</code><span>このパスに制作済み画像を配置してください</span></div>
+        </div>
+        <p class="bridge reveal">その不安を解消するために、<br><span class="text-cyan">TikTok Shop LIVEの始め方</span>がわかる<br>無料ロードマップを用意しました。</p>
+      </div>
+    </section>
+
+    <!-- 3. WHY NOW visual: replace only assets/images/why-now-visual.png. -->
+    <section class="section section-black" id="why-now">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">WHY NOW</p>
+          <h2>TikTok Shop LIVEは、<br><span class="text-pink">今のうちに始める人</span>が有利です</h2>
+          <p class="lead">TikTok Shopは、2025年6月30日に日本で提供が始まった新しい領域です。市場が広がる前に、LIVE販売の型を先に身につけることが差になります。</p>
+        </div>
+        <div class="image-frame content-visual-frame why-visual-frame reveal">
+          <img class="production-image" src="assets/images/why-now-visual.png" alt="TikTok Shop LIVEを今のうちに始める人が有利な3つの理由">
+          <div class="image-placeholder"><strong>WHY NOWビジュアル</strong><code>assets/images/why-now-visual.png</code><span>このパスに制作済み画像を配置してください</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BEGINNER FRIENDLY visual: replace only assets/images/beginner-reasons-visual.png. -->
+    <section class="section section-light" id="easy">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">BEGINNER FRIENDLY</p>
+          <h2>TikTok Shop LIVEが<br><span class="text-cyan">初心者でも始めやすい理由</span></h2>
+          <p class="lead">必要なのは、特別なセンスよりも「流れ」と「型」です。</p>
+        </div>
+        <div class="image-frame content-visual-frame reasons-visual-frame reveal">
+          <img class="production-image" src="assets/images/beginner-reasons-visual.png" alt="TikTok Shop LIVEが初心者でも始めやすい3つの理由">
+          <div class="image-placeholder"><strong>初心者向け理由ビジュアル</strong><code>assets/images/beginner-reasons-visual.png</code><span>このパスに制作済み画像を配置してください</span></div>
+        </div>
+        <p class="note reveal">今のうちに型を学んでおくことで、後から参入する人との差を作りやすくなります。</p>
+      </div>
+    </section>
+
+    <!-- 5. Flow visual: replace only assets/images/live-commerce-flow.png. -->
+    <section class="section section-black" id="flow">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">FLOW</p>
+          <h2>TikTok Shop LIVEで<br><span class="text-cyan">売れる仕組み</span></h2>
+          <p class="lead">ライブで紹介して、そのまま購入へ。配信中に質問へ答えながら、商品カードから購入につなげられる販売導線です。</p>
+        </div>
+        <p class="note reveal">この流れを早めに理解すると、配信設計や商品紹介の型を先に作りやすくなります。</p>
+        <div class="image-frame reveal">
+          <img class="production-image" src="assets/images/live-commerce-flow.png" alt="TikTok Shop LIVEで商品紹介から購入につながる仕組み">
+          <div class="image-placeholder"><strong>売れる仕組み図解</strong><code>assets/images/live-commerce-flow.png</code><span>このパスに制作済み画像を配置してください</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Comparison visual: replace only assets/images/video-vs-live-commerce.png. -->
+    <section class="section section-black" id="comparison">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">COMPARISON</p>
+          <h2>動画投稿より、<br><span class="text-pink">ライブコマース</span>が売りやすい理由</h2>
+          <p class="lead">リアルタイムで伝えて、その場で購入へ。視聴者と会話しながら説明できるため、購入までの心理的な距離を縮めやすいのが特徴です。</p>
+        </div>
+        <p class="note reveal">これから参入するなら、動画投稿だけでなく、ライブ販売の型を早く身につけることが重要です。</p>
+        <div class="image-frame reveal">
+          <img class="production-image" src="assets/images/video-vs-live-commerce.png" alt="動画投稿とライブコマースの比較">
+          <div class="image-placeholder"><strong>動画投稿 vs ライブコマース比較図</strong><code>assets/images/video-vs-live-commerce.png</code><span>このパスに制作済み画像を配置してください</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. LINE bonuses: one set-style panel, not another card grid. -->
+    <section class="section section-light" id="bonus">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">BENEFIT</p>
+          <h2>今のうちに学ぶための<br><span class="text-cyan">無料ロードマップ</span>を配布中</h2>
+          <p class="lead">全体像、商品紹介、コメント対応、購入導線まで、初心者向けにまとめました。</p>
+        </div>
+        <div class="benefit-panel reveal">
+          <!-- Replace only assets/images/free-roadmap-thumbnail.png when the distributed roadmap thumbnail changes. -->
+          <div class="benefit-thumbnail"><img src="assets/images/free-roadmap-thumbnail.png" alt="TikTok Shop LIVE初心者向けスタートロードマップ"><span class="benefit-thumbnail-tag">LINE限定配布</span></div>
+          <div class="benefit-list">
+            <article class="benefit-item"><span class="benefit-item-icon">▣</span><div><b>BONUS 01</b><h3>TikTok Shop LIVE開始ガイド</h3></div></article>
+            <article class="benefit-item"><span class="benefit-item-icon">✎</span><div><b>BONUS 02</b><h3>ライブ販売台本テンプレ</h3></div></article>
+            <article class="benefit-item"><span class="benefit-item-icon">♧</span><div><b>BONUS 03</b><h3>コメント対応トーク集</h3></div></article>
+            <article class="benefit-item"><span class="benefit-item-icon">✓</span><div><b>BONUS 04</b><h3>配信前チェックリスト</h3></div></article>
+          </div>
+        </div>
+        <p class="note reveal">競合が増える前に、まずは全体像をつかんでおきましょう。</p>
+        <div class="cta-block reveal"><a class="cta-btn line-link" href="https://lin.ee/pGL7LOU"><span class="cta-icon">L</span>LINEで無料ロードマップを受け取る</a><p class="cta-meta">登録後すぐ受け取り ｜ 今だけ無料</p></div>
+      </div>
+    </section>
+
+    <!-- 9. Testimonials: publish only after verifying each result and obtaining permission to display it. -->
+    <section class="section section-light" id="voices">
+      <div class="container">
+        <div class="section-head reveal"><p class="eyebrow">VOICE</p><h2>実践者の声</h2><p class="lead">働き方に合わせて、TikTok Shop LIVEへ取り組んでいます。</p></div>
+        <div class="voice-slider-wrap reveal">
+          <div class="voice-slider" id="voiceSlider">
+            <article class="voice"><div class="voice-profile"><span class="voice-avatar" aria-hidden="true"></span><div><small>CASE 01</small><h3>20代男性<br>顔出しなし・フルコミット</h3></div></div><div class="voice-body"><span class="voice-metric-label">FIRST MONTH RESULT</span><div class="voice-metric">成果報酬 <strong>60万円</strong></div><p>顔出しなしで取り組み、初月から成果報酬を獲得しました。</p><div class="voice-tags"><span class="voice-tag">顔出しなし</span><span class="voice-tag pink">初月</span></div></div></article>
+            <article class="voice"><div class="voice-profile"><span class="voice-avatar" aria-hidden="true"></span><div><small>CASE 02</small><h3>20代男性<br>副業・1日2時間</h3></div></div><div class="voice-body"><span class="voice-metric-label">MONTHLY SIDE INCOME</span><div class="voice-metric">副収入 <strong>20万円</strong></div><p>1日2時間の副業として取り組み、月20万円の副収入を獲得しました。</p><div class="voice-tags"><span class="voice-tag">副業</span><span class="voice-tag pink">1日2時間</span></div></div></article>
+            <article class="voice"><div class="voice-profile"><span class="voice-avatar" aria-hidden="true"></span><div><small>CASE 03</small><h3>30代女性<br>土日のみ配信</h3></div></div><div class="voice-body"><span class="voice-metric-label">MONTHLY SALES</span><div class="voice-metric">売上 <strong>30万円</strong></div><p>土日だけの配信で、月30万円の売上を獲得しました。</p><div class="voice-tags"><span class="voice-tag">土日のみ</span><span class="voice-tag pink">在宅副業</span></div></div></article>
+          </div>
+          <div class="voice-slider-controls" aria-label="口コミスライダー操作">
+            <button class="voice-slider-btn" type="button" data-voice-slide="-1" aria-label="前の口コミを見る">‹</button>
+            <button class="voice-slider-btn" type="button" data-voice-slide="1" aria-label="次の口コミを見る">›</button>
+          </div>
+        </div>
+        <p class="voice-slider-note reveal">※実践者の一例です。成果には個人差があり、同様の成果を保証するものではありません。</p>
+      </div>
+    </section>
+
+    <!-- 10. School: light introduction only. -->
+    <section class="section section-light" id="school">
+      <div class="container">
+        <div class="section-head reveal"><p class="eyebrow">SCHOOL</p><h2>ロードマップの先では、<br><span class="text-cyan">実践型スクール</span>で学ぶこともできます</h2></div>
+        <div class="school-box reveal">
+          <div class="school-copy"><h3>未経験から実践まで、<br>必要な型を段階的に。</h3><p>今のうちにライブ販売の型を学びたい方へ。商品選定から配信設計まで、詳しいご案内はLINE内でお届けします。</p></div>
+          <ul class="school-list"><li><span class="school-list-icon">◇</span>商品選定</li><li><span class="school-list-icon">✎</span>ライブ販売台本</li><li><span class="school-list-icon">♧</span>コメント対応</li><li><span class="school-list-icon">▣</span>配信設計</li><li><span class="school-list-icon">✓</span>サポート</li><li><span class="school-list-icon">◎</span>コミュニティ</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. FAQ -->
+    <section class="section section-soft" id="faq">
+      <div class="container">
+        <div class="section-head reveal"><p class="eyebrow">FAQ</p><h2>よくある質問</h2></div>
+        <div class="faq reveal">
+          <div class="faq-item"><button class="faq-q" type="button"><span>未経験でも大丈夫ですか？</span><span class="faq-plus">+</span></button><div class="faq-a"><p>はい。TikTok Shop LIVEが初めての方でも全体像が分かる内容です。</p></div></div>
+          <div class="faq-item"><button class="faq-q" type="button"><span>顔出しは必要ですか？</span><span class="faq-plus">+</span></button><div class="faq-a"><p>顔出しなしで学べる内容も含まれています。</p></div></div>
+          <div class="faq-item"><button class="faq-q" type="button"><span>ライブ配信が苦手でも大丈夫ですか？</span><span class="faq-plus">+</span></button><div class="faq-a"><p>台本や話す流れを用意することで、未経験でも始めやすくなります。</p></div></div>
+          <div class="faq-item"><button class="faq-q" type="button"><span>スマホだけでも見られますか？</span><span class="faq-plus">+</span></button><div class="faq-a"><p>はい。LINEからスマホで確認できます。</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Final CTA: HTML/CSS only. -->
+    <section class="final" id="final">
+      <div class="container">
+        <div class="final-box reveal">
+          <p class="eyebrow">START TODAY</p>
+          <h2>競合が増える前に、<br><span class="text-cyan">まずは1日で全体像</span>をつかむ</h2>
+          <p>TikTok Shop LIVEは、早く型を学び、実践イメージを持つほど動き出しやすくなります。無料ロードマップで、ライブ配信・商品紹介・コメント対応・購入導線を確認してください。</p>
+          <div class="cta-block"><a class="cta-btn line-link" href="https://lin.ee/pGL7LOU"><span class="cta-icon">L</span>LINEで無料ロードマップを受け取る</a><p class="cta-meta">登録後すぐ受け取り ｜ 今だけ無料</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container"><p>本ページはTikTokおよびLINEの公式ページではありません。掲載内容は学習機会のご案内であり、成果を保証するものではありません。</p><p>© 2026 TikTok Shop LIVE GUIDE</p></div></footer>
+
+  <div class="fixed-cta" id="fixedCta"><a class="cta-btn line-link" href="https://lin.ee/pGL7LOU"><span class="cta-icon">L</span>LINEで無料ロードマップを受け取る</a></div>
+
+  <script>
+    // Replace only this value when the production LINE official account URL is ready.
+    const LINE_URL = "https://lin.ee/pGL7LOU";
+
+    document.querySelectorAll(".line-link").forEach((link) => {
+      link.href = LINE_URL;
+      link.addEventListener("click", () => {
+        // Add production analytics events here, for example GTM or Meta Pixel.
+      });
+    });
+
+    // Show an intentional placeholder until each approved production image is placed.
+    document.querySelectorAll(".production-image").forEach((image) => {
+      const markMissing = () => image.closest(".image-frame").classList.add("missing");
+      image.addEventListener("error", markMissing);
+      if (image.complete && image.naturalWidth === 0) markMissing();
+    });
+
+    document.querySelectorAll(".faq-q").forEach((button) => {
+      button.addEventListener("click", () => {
+        const item = button.parentElement;
+        const answer = item.querySelector(".faq-a");
+        item.classList.toggle("open");
+        answer.style.maxHeight = item.classList.contains("open") ? `${answer.scrollHeight}px` : "0";
+      });
+    });
+
+    const voiceSlider = document.getElementById("voiceSlider");
+    document.querySelectorAll("[data-voice-slide]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const card = voiceSlider.querySelector(".voice");
+        const gap = 16;
+        voiceSlider.scrollBy({ left: Number(button.dataset.voiceSlide) * (card.offsetWidth + gap), behavior: "smooth" });
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+    const fixedCta = document.getElementById("fixedCta");
+    const toggleFixedCta = () => fixedCta.classList.toggle("show", window.scrollY > 430);
+    window.addEventListener("scroll", toggleFixedCta, { passive: true });
+    toggleFixedCta();
+  </script>
+</body>
 </html>
